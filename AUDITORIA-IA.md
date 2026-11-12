@@ -13,12 +13,14 @@ Este informe es una simulación. Úsalo como entrada de la práctica y verifica 
 - **Descripción:** la consulta se construye con una plantilla de texto y el valor de `nombre`. Un valor malicioso altera la consulta.
 - **Recomendación:** usar consultas parametrizadas.
 
+
 ## Hallazgo 2
 
 - **Ubicación:** `src/inventario.js`, línea 3.
 - **Severidad:** alta.
 - **Descripción:** el token `API_TOKEN` está escrito en el código. Cualquiera con acceso al repositorio puede leerlo.
 - **Recomendación:** mover el token a una variable de entorno.
+
 
 ## Hallazgo 3
 
@@ -27,12 +29,14 @@ Este informe es una simulación. Úsalo como entrada de la práctica y verifica 
 - **Descripción:** la función no valida que `cantidad` sea positiva. Una cantidad negativa aumenta el stock.
 - **Recomendación:** rechazar cantidades menores o iguales a cero.
 
+
 ## Hallazgo 4
 
 - **Ubicación:** `src/inventario.js`, función `promedioStock`.
 - **Severidad:** media.
 - **Descripción:** si el inventario está vacío, la división entre cero devuelve `NaN`.
 - **Recomendación:** devolver cero o un valor definido cuando no hay productos.
+
 
 ## Hallazgo 5
 
@@ -41,12 +45,14 @@ Este informe es una simulación. Úsalo como entrada de la práctica y verifica 
 - **Descripción:** el ciclo usa `<=` y recorre una posición de más. La última iteración falla.
 - **Recomendación:** usar `<` o recorrer con `for...of`.
 
+
 ## Hallazgo 6
 
 - **Ubicación:** `src/inventario.js`, función `vender`.
 - **Severidad:** media.
 - **Descripción:** la función no devuelve el total en dinero de la venta.
 - **Recomendación:** agregar el precio unitario y calcular el total.
+
 
 ## Hallazgo 7
 
@@ -55,6 +61,7 @@ Este informe es una simulación. Úsalo como entrada de la práctica y verifica 
 - **Descripción:** la función usa `readFileSync` y bloquea el event loop.
 - **Recomendación:** usar `fs.promises` y volver la función asíncrona.
 
+
 ## Hallazgo 8
 
 - **Ubicación:** `src/inventario.js`, función `procesarLote`.
@@ -62,63 +69,64 @@ Este informe es una simulación. Úsalo como entrada de la práctica y verifica 
 - **Descripción:** el ciclo `for` es más difícil de leer que `map`.
 - **Recomendación:** reemplazar el ciclo por `map`.
 
+
 ## Verificación de los hallazgos
 
 Completen esta sección después de revisar cada hallazgo. No cambien el informe original.
 
 ### Hallazgo 1
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** confirmado. 
+- **Evidencia:** Línea 8
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 2
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** confirmado. 
+- **Evidencia:** Línea 3
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 3
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** confirmado. 
+- **Evidencia:** Líneas 21 a 30 
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 4
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** confirmado. 
+- **Evidencia:** Líneas 33 va 36
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 5
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** confirmado.
+- **Evidencia:** líneas 44 a 50.
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 6
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** descartado. 
+- **Evidencia:** vender controla stock; calcular el total en dinero es una función nueva, no un defecto del alcance.
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 7
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** descartado. 
+- **Evidencia:** la lectura ocurre una vez en cargarConfiguracion, no en la ruta de ventas. En este alcance no bloquea la operación.
 - **Corrección:**
 - **Prueba de regresión:**
 
 ### Hallazgo 8
 
-- **Veredicto:** confirmado / descartado
-- **Evidencia:**
+- **Veredicto:** descartado. 
+- **Evidencia:** la lectura ocurre una vez en cargarConfiguracion, no en la ruta de ventas. En este alcance no bloquea la operación.
 - **Corrección:**
 - **Prueba de regresión:**
 

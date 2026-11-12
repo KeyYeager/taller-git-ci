@@ -38,7 +38,9 @@ export function promedioStock() {
 export function cargarConfiguracion(ruta) {
   try {
     return JSON.parse(readFileSync(ruta, 'utf8'));
-  } catch {}
+  } catch {
+
+  }
 }
 
 export function procesarLote(lote) {
