@@ -78,36 +78,36 @@ Completen esta sección después de revisar cada hallazgo. No cambien el informe
 
 - **Veredicto:** confirmado. 
 - **Evidencia:** Línea 8
-- **Corrección:** 
-- **Prueba de regresión:**
+- **Corrección:** se sanitizo la validacion de los datos mediante un parametro
+- **Prueba de regresión:** no concatena el nombre en la consulta
 
 ### Hallazgo 2
 
 - **Veredicto:** confirmado. 
 - **Evidencia:** Línea 3
-- **Corrección:**
-- **Prueba de regresión:**
+- **Corrección:** se implemento una variable de entorno en vez de un token fijo
+- **Prueba de regresión:** buscarProducto usa process.env.API_TOKEN
 
 ### Hallazgo 3
 
 - **Veredicto:** confirmado. 
 - **Evidencia:** Líneas 21 a 30 
-- **Corrección:**
-- **Prueba de regresión:**
+- **Corrección:** evalua si la cantidad es menor igual a cero 
+- **Prueba de regresión:** rechaza una cantidad negativa
 
 ### Hallazgo 4
 
 - **Veredicto:** confirmado. 
 - **Evidencia:** Líneas 33 va 36
-- **Corrección:**
-- **Prueba de regresión:**
+- **Corrección:** cual el valor de entrada sea CERO devuelve el mismo valor
+- **Prueba de regresión:** el promedio vacío es cero
 
 ### Hallazgo 5
 
 - **Veredicto:** confirmado.
 - **Evidencia:** líneas 44 a 50.
-- **Corrección:**
-- **Prueba de regresión:**
+- **Corrección:** 
+- **Prueba de regresión:** procesa el lote completo
 
 ### Hallazgo 6
 
