@@ -78,7 +78,7 @@ Completen esta sección después de revisar cada hallazgo. No cambien el informe
 
 - **Veredicto:** confirmado. 
 - **Evidencia:** Línea 8
-- **Corrección:**
+- **Corrección:** 
 - **Prueba de regresión:**
 
 ### Hallazgo 2
@@ -113,21 +113,21 @@ Completen esta sección después de revisar cada hallazgo. No cambien el informe
 
 - **Veredicto:** descartado. 
 - **Evidencia:** vender controla stock; calcular el total en dinero es una función nueva, no un defecto del alcance.
-- **Corrección:**
+- **Corrección:** No aplica.
 - **Prueba de regresión:**
 
 ### Hallazgo 7
 
 - **Veredicto:** descartado. 
 - **Evidencia:** la lectura ocurre una vez en cargarConfiguracion, no en la ruta de ventas. En este alcance no bloquea la operación.
-- **Corrección:**
+- **Corrección:** No aplica.
 - **Prueba de regresión:**
 
 ### Hallazgo 8
 
 - **Veredicto:** descartado. 
 - **Evidencia:** la lectura ocurre una vez en cargarConfiguracion, no en la ruta de ventas. En este alcance no bloquea la operación.
-- **Corrección:**
+- **Corrección:** No aplica.
 - **Prueba de regresión:**
 
 ## Declaración de uso de IA
